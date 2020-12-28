@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+/**
+ * @author 15159
+ *题目描述
+KiKi学会了printf在屏幕输出信息，他想输出一架小飞机。请帮他编写程序输出这架小飞机。
+输入描述:
+无
+输出描述:
+
+ */
+public class Bc7 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+		System.out.print("0"+Integer.toOctalString(1234)+" ");
+		System.out.print("0X"+Integer.toHexString(1234).toUpperCase());
+		
+
+	}
+
+}
