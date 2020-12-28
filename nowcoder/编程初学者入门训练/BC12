@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *BoBo教KiKi字符常量或字符变量表示的字符在内存中以ASCII码形式存储。
+ *BoBo出了一个问题给KiKi，转换以下ASCII码为对应字符并输出他们。
+
+73, 32, 99, 97, 110, 32, 100, 111, 32, 105, 116 , 33
+ */
+public class Bc12 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		char c;
+		Scanner scanner = new Scanner(System.in);
+		
+		c = scanner.nextLine().charAt(0);
+        System.out.println("    "+c);
+        System.out.println("   "+c+" "+c);
+        System.out.println("  "+c+" "+c+" "+c);
+        System.out.println(" "+c+" "+c+" "+c+" "+c);
+        System.out.println(c+" "+c+" "+c+" "+c+" "+c);
+
+	}
+
+}
