@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+给定秒数seconds (0< seconds < 100,000,000)，把秒转化成小时、分钟和秒。
+
+输入描述:
+一行，包括一个整数，即给定的秒数。
+输出描述:
+一行，包含三个整数，依次为输入整数对应的小时数、分钟数和秒数（可能为零），中间用一个空格隔开。
+示例1
+输入
+3661
+输出
+1 1 1
+ */
+public class Bc23 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		long s=sc.nextLong();
+        long h=s/3600;
+        long m=(s%3600)/60;
+        long se=s%60;
+        
+        System.out.println(h+" "+m+" "+se);
+
+	}
+
+}
