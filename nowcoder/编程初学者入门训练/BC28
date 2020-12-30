@@ -7,33 +7,45 @@ import java.util.Scanner;
 
 /**
  * @author 15159
+ *
  *题目描述
-给定一个球体的半径，计算其体积。其中球体体积公式为 V = 4/3*πr3，其中 π= 3.1415926。
+实现字母的大小写转换。多组输入输出。
 输入描述:
-一行，用浮点数表示的球体的半径。
+多组输入，每一行输入大写字母。
 输出描述:
-一行，球体的体积，小数点后保留3位。
+针对每组输入输出对应的小写字母。
 示例1
 输入
-3.0
+A
+B
 输出
-113.097
+a
+b
+备注:
+多组输入过程中要注意“回车”也是字母，所以要“吸收”(getchar())掉该字母。
  */
-public class Bc27 {
+public class Bc28 {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		
-		double r = sc.nextDouble();
-		double PAI = 3.1415926;
-		double V =(4.0/3.0)*PAI*Math.pow(r, 3);
-		
-		System.out.printf("%.3f",V);
+//		Scanner sc = new Scanner(System.in);
+//		
+//		String str1 = sc.next();
+//		String str2 = sc.next();
+//		
+//		System.out.println(str1.toLowerCase());
+//		System.out.println(str2.toLowerCase());
 
+		
+		Scanner sc=new Scanner(System.in);
+        while(sc.hasNext())
+        {
+            String s=sc.next();
+            System.out.println(s.toLowerCase());
+        }
 	}
 
 }
