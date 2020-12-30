@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+根据给出的三角形3条边a, b, c（0 < a, b, c < 100,000），计算三角形的周长和面积。
+输入描述:
+一行，三角形3条边（能构成三角形），中间用一个空格隔开。
+输出描述:
+一行，三角形周长和面积（保留两位小数），中间用一个空格隔开，输出具体格式详见输出样例。
+示例1
+输入
+复制
+3 3 3
+输出
+复制
+circumference=9.00 area=3.90
+ */
+public class Bc26 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		double a = sc.nextDouble();
+		double b = sc.nextDouble();
+		double c = sc.nextDouble();
+		double cir = a+b+c;
+		double area =Math.sqrt((cir/2)*(cir/2-a)*(cir/2-b)*(cir/2-c));
+
+		System.out.printf("circumference=%.2f area=%.2f",cir,area);
+	}
+
+}
