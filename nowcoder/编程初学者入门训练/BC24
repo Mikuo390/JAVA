@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+依次输入一个学生的3科成绩，在屏幕上输出该学生的总成绩以及平均成绩。
+输入描述:
+一行，3科成绩，成绩之间用一个空格隔开。
+输出描述:
+一行，总成绩和平均成绩（小数点后保留两位），用一个空格隔开。
+示例1
+输入
+79.5 80.0 98.0
+输出
+257.50 85.83
+ */
+public class Bc24 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		double mark1 = sc.nextDouble();
+		double mark2 = sc.nextDouble();
+		double mark3 = sc.nextDouble();
+		double sum = mark1+mark2+mark3;
+		
+		System.out.printf("%.2f %.2f",sum,sum/3);
+
+	}
+
+}
