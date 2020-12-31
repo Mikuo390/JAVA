@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+KiKi想完成字母大小写转换，有一个字符，判断它是否为大写字母，如果是，将它转换成小写字母；反之则转换为大写字母。
+输入描述:
+多组输入，每一行输入一个字母。
+输出描述:
+针对每组输入，输出单独占一行，输出字母的对应形式。
+示例1
+输入
+a
+A
+Z
+输出
+A
+a
+z
+ */
+public class Bc48 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			String str=sc.next();
+			
+            if(str.matches("[A-Z]")){
+                System.out.println(str.toLowerCase());
+            }
+            else {
+                System.out.println(str.toUpperCase());
+            }
+
+		}
+
+	}
+}
