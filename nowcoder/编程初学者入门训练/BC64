@@ -1,0 +1,97 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+import java.util.*;
+/**
+ * @author 15159
+ *题目描述
+KiKi学习了循环，BoBo老师给他出了一系列打印图案的练习，该任务是打印用“*”组成的K形图案。
+输入描述:
+多组输入，一个整数（2~20）。
+
+输出描述:
+针对每行输入，输出用“*”组成的K形，每个“*”后面有一个空格。
+示例1
+输入
+2
+输出
+* * * 
+* *  
+*   
+* *  
+* * * 
+示例2
+输入
+3
+输出
+
+* * * * 
+* * *  
+* *   
+*    
+* *   
+* * *  
+* * * * 
+示例3
+输入
+4
+输出
+* * * * * 
+* * * *  
+* * *   
+* *    
+*     
+* *    
+* * *   
+* * * *  
+* * * * * 
+ */
+public class Bc64 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+//		Scanner sc = new Scanner(System.in);
+//		
+//		while(sc.hasNext()) {
+//			int n = sc.nextInt();
+//			//上三角
+//			for(int i=0;i<=n;i++) {
+//				for(int j=0;j<=n-i;j++)
+//					System.out.print("* ");
+//				System.out.println("");
+//			}
+//			for(int i=0;i<n;i++){
+//				for(int j=0;j<i+2;j++) {
+//					System.out.print("* ");
+//				}
+//				System.out.println("");
+//			}
+//		}
+//
+//	}
+		
+		Scanner scanner = new Scanner(System.in);
+		while (scanner.hasNext()){
+			int num = scanner.nextInt();
+			int init = 2;
+			int init2 = num-1;
+			int init3 = 0;
+			//先打印num+1行
+			for (int i = num+1;i > 0;i--) {
+				System.out.print(String.join("", Collections.nCopies(i,"* ")));
+				System.out.println(String.join("",Collections.nCopies(init3++,"  ")));
+			}
+			//在打印num行,这个num行第一行都是从2个*开始逐行+1
+			for (int j = 1;j<=num;j++) {
+				System.out.print(String.join("",Collections.nCopies(init++,"* ")));
+				System.out.println(String.join("",Collections.nCopies(init2--,"  ")));
+			}
+		}
+	}
+}
