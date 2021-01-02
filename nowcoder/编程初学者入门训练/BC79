@@ -1,0 +1,67 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+给出两幅相同大小的黑白图像（用0-1矩阵）表示，求它们的相似度。
+若两幅图像在相同位置上的像素点颜色相同，则称它们在该位置具有相同的像素点。
+两幅图像的相似度定义为相同像素点数占总像素点数的百分比。
+
+输入描述:
+第一行包含两个整数m和n，表示图像的行数和列数，用单个空格隔开。
+1≤m≤100, 1≤n≤100。之后m行，每行n个整数0或1，表示第一幅黑白图像上各像素点的颜色，相邻两个数用单个空格隔开。
+之后m行，每行n个整数0或1，表示第二幅黑白图像上各像素点的颜色，相邻两个数用单个空格隔开。
+输出描述:
+一个实数，表示相似度(以百分比的形式给出)，精确到小数点后两位。
+示例1
+输入
+复制
+3 3
+1 0 1
+0 0 1
+1 1 0
+1 1 0
+0 0 1
+0 0 1
+输出
+44.44
+ */
+public class Bc79 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		double count=0;
+		
+		while(sc.hasNext()) {
+			int row = sc.nextInt();
+			int col = sc.nextInt();
+			double[] rc = new double[row*col];
+			double[] cr = new double[col*row];
+			
+			for(int i=0;i<row*col;i++){
+				rc[i]=sc.nextDouble();
+			}
+			for(int i=0;i<col*row;i++) {
+				cr[i]=sc.nextDouble();
+			}
+			for(int i=0;i<col*row;i++) {
+				if(rc[i]==cr[i])
+					count++;
+			}
+			
+			System.out.printf("%.2f",100*count/(col*row));
+			System.out.println("");
+		}
+
+	}
+
+}
