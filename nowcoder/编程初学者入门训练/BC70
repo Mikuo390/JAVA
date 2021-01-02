@@ -1,0 +1,60 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+KiKi学习了循环，BoBo老师给他出了一系列打印图案的练习，该任务是打印用“*”组成的“空心”三角形图案。
+输入描述:
+多组输入，一个整数（3~20），表示输出的行数，也表示组成三角形边的“*”的数量。
+输出描述:
+针对每行输入，输出用“*”组成的“空心”三角形，每个“*”后面有一个空格。
+示例1
+输入
+复制
+4
+输出
+*       
+* *     
+*   *   
+* * * * 
+示例2
+输入
+5
+输出
+*         
+* *       
+*   *     
+*     *   
+* * * * *
+ */
+public class Bc70 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			int n = sc.nextInt();
+			
+			for(int i=0;i<n;i++) {
+				for(int j=0;j<n;j++){
+					if(j==0||i==j||i==n-1)
+						System.out.print("* ");
+					else
+						System.out.print("  ");
+				}
+				System.out.println("");
+			}
+		}
+
+	}
+
+}
