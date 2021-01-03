@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+输入n科成绩（浮点数表示），统计其中的最高分，最低分以及平均分。
+
+输入描述:
+两行，
+第1行，正整数n（1≤n≤100）
+第2行，n科成绩（范围0.0~100.0），用空格分隔。
+输出描述:
+输出一行，三个浮点数，分别表示，最高分，最低分以及平均分（小数点后保留2位），用空格分隔。
+示例1
+输入
+5
+99.5 100.0 22.0 60.0 88.5
+输出
+100.00 22.00 74.00
+ */
+public class Bc87 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		double sum=0;
+		
+		while(sc.hasNext()) {
+			
+			int n = sc.nextInt();
+			double[] mark = new double[n];
+			
+			for(int i=0;i<=n-1;i++)
+				mark[i] = sc.nextDouble();
+			
+			Arrays.sort(mark);
+			for(int i =0;i<mark.length;i++) {
+				sum += mark[i];
+			}
+			
+			System.out.printf("%.2f %.2f %.2f",mark[n-1],mark[0],sum/n);
+			
+		}
+
+	}
+
+}
