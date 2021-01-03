@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+输入数字N，然后输入N个数，计算这N个数的和。
+输入描述:
+第一行输入一个整数N(0≤N≤50)，第二行输入用空格分隔的N个整数。
+输出描述:
+输出为一行，为第二行输入的“N个整数之和”的计算结果。
+示例1
+输入
+5
+1 2 3 4 5
+输出
+15
+ */
+public class Bc94 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+		while(sc.hasNext()) {
+			int n=sc.nextInt();
+			int sum=0;
+			
+			for(int i=1;i<=n;i++){
+				sum+=sc.nextInt();
+			}
+			
+			System.out.print(sum);
+		}
+		
+	}
+
+}
