@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *目描述
+输入10科成绩，换行显示输入的10科成绩。
+输入描述:
+一行，输入10科成绩（整数表示，范围0~100），用空格分隔。
+输出描述:
+一行，输出输入的10科成绩，用空格分隔。
+示例1
+输入
+98 100 99 97 95 99 98 97 96 100
+输出
+98 100 99 97 95 99 98 97 96 100
+ */
+public class Bc91 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()){
+        	
+        	String[] str = sc.next().split(" ");
+        	
+        	for(int i=0;i<str.length;i++) {
+        		System.out.print(str[i]+" ");
+        	}
+        
+        }
+
+	}
+
+}
