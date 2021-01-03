@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+
+/**
+ * @author 15159
+ *题目描述
+今年是2019年，KiKi想知道1~2019中有多少个包含数字9的数。包含数字的数是指有某一位是“9”的数，例如“2019”、“199”等。
+
+输入描述:
+无
+输出描述:
+一行，一个整数，表示1~2019中共有多少个数包含数字9。
+
+ */
+public class Bc85 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int count = 0;
+		
+		for(Integer i=1;i<=2019;i++) {
+			
+			if(i.toString().contains("9")) {
+				count++;
+			}
+			
+		}
+		
+		System.out.println(count);
+
+	}
+
+}
