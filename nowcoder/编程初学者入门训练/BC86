@@ -1,0 +1,51 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+任意输入一个正整数N，统计1~N之间奇数的个数和偶数的个数，并输出。
+
+输入描述:
+一行，一个正整数N。（1≤N≤100,000）
+输出描述:
+一行，1~N之间奇数的个数和偶数的个数，用空格分开。
+示例1
+输入
+5
+输出
+3 2
+ */
+public class Bc86 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			
+			int end = sc.nextInt();
+			int oddnum = 0;
+			int evennum = 0;
+			
+			for(int i=1;i<=end;i++) {
+				if(i%2==0)
+					oddnum++;
+				else
+					evennum++;
+			}
+			
+			System.out.println(evennum+" "+oddnum);
+			
+		}
+
+	}
+
+}
