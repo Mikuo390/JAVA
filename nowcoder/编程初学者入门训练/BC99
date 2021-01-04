@@ -1,0 +1,51 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+/**
+ * @author 15159
+ *题目描述
+输入n个整数的序列，要求对这个序列进行去重操作。所谓去重，是指对这个序列中每个重复出现的整数，只保留该数第一次出现的位置，删除其余位置。
+输入描述:
+输入包含两行，第一行包含一个正整数n（1 ≤ n ≤ 1000），表示第二行序列中数字的个数；第二行包含n个整数（范围1~5000），用空格分隔。
+
+输出描述:
+输出为一行，按照输入的顺序输出去重之后的数字，用空格分隔。
+
+示例1
+输入
+5
+10 12 93 12 75
+输出
+10 12 93 75
+ */
+public class Bc99 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			
+			int n = sc.nextInt();
+			Set<String> set = new LinkedHashSet<>();
+			for(int i=0;i<n;i++) {
+				set.add(Integer.toString(sc.nextInt()));
+			}
+			String res = set.stream().collect(Collectors.joining(" "));
+			System.out.println(res);
+			
+		}
+
+	}
+
+}
