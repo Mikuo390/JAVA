@@ -1,0 +1,78 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+KiKi和BoBo玩 “井”字棋。也就是在九宫格中，只要任意行、列，或者任意对角线上面出现三个连续相同的棋子，就能获胜。请根据棋盘状态，判断当前输赢。
+
+输入描述:
+三行三列的字符元素，代表棋盘状态，字符元素用空格分开，代表当前棋盘，其中元素为K代表KiKi玩家的棋子，为O表示没有棋子，为B代表BoBo玩家的棋子。
+输出描述:
+如果KiKi获胜，输出“KiKi wins!”；
+如果BoBo获胜，输出“BoBo wins!”；
+如果没有获胜，输出“No winner!”。
+示例1
+输入
+K O B
+O K B
+B O K
+输出
+KiKi wins!
+ */
+public class Bc110 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		while (sc.hasNext()) {
+			String[][] matrix = new String[3][3];
+			for (int i = 0; i < 3; i++) {
+				for (int j = 0; j < 3; j++) {
+					String h = sc.next();
+					matrix[i][j] = h;
+				}
+			}
+
+			int k = judge("K", matrix);
+			int b = judge("B", matrix);
+			if (k == b) {
+				System.out.println("No winner!");
+			} else if (k > b) {
+				System.out.println("KiKi wins!");
+			} else {
+				System.out.println("BoBo wins!");
+			}
+
+		}
+	}
+
+	public static int judge(String p, String[][] m) {
+		int res = 0;
+		for (int i = 0; i < 3; i++) {
+			if (m[i][0].equals(p) & m[i][1].equals(p) && m[i][2].equals(p)) {
+				res++;
+			}
+			if (m[0][i].equals(p) && m[1][i].equals(p) && m[2][i].equals(p)) {
+				res++;
+			}
+			if (i == 1) {
+				if (m[i][i].equals(p) & m[0][0].equals(p) && m[2][2].equals(p)) {
+					res++;
+				} else if (m[i][i].equals(p) && m[0][2].equals(p) && m[2][0].equals(p)) {
+					res++;
+				}
+			}
+		}
+		return res;
+
+	}
+}
