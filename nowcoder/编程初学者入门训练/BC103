@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+KiKi现在得到一个包含n*m个数的整数序列，现在他需要把这n*m个数按顺序规划成一个n行m列的矩阵并输出，请你帮他完成这个任务。
+输入描述:
+一行，输入两个整数n和m，用空格分隔，第二行包含n*m个整数（范围-231~231-1）。(1≤n≤10, 1≤m≤10)
+输出描述:
+输出规划后n行m列的矩阵，每个数的后面有一个空格。
+示例1
+输入
+2 3
+1 2 3 4 5 6
+输出
+1 2 3
+4 5 6
+ */
+public class Bc103 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+		while(sc.hasNext()) {
+			
+			int row = sc.nextInt();
+			int col = sc.nextInt();
+			int[][] arr = new int[row][col];
+			
+			for(int i=0;i<row;i++) {
+				for(int j=0;j<col;j++) {
+					arr[i][j]=sc.nextInt();
+				}
+			}
+			
+			for (int i=0; i<row; i++) {
+                for(int j=0;j<col;j++){
+                   System.out.print(arr[i][j]+" ");
+                }
+                System.out.print("\n");
+            }
+			
+		}
+		
+	}
+
+}
