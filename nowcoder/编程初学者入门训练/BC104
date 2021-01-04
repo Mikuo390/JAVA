@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+KiKi想从n行m列的方阵队列中找到身高最高的人的位置，请你帮助他完成这个任务。
+
+输入描述:
+第一行包含两个整数n和m，表示这个方阵队列包含n行m列。从2到n+1行，每行输入m个整数（范围-231~231-1），用空格分隔，共输入n*m个数，表示方阵中的所有人的身高（保证输入身高都不相同）。(1≤x≤n≤10，1≤y≤m≤10)
+
+输出描述:
+一行，输出两个整数，用空格分隔，表示方阵中身高最高的人所在的行号和列号。
+示例1
+输入
+2 2
+175 180
+176 185
+输出
+2 2
+ */
+public class Bc104 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int[][] arr=new int[n+1][m+1];
+        int a=0,b=0,max=0;
+        
+        for (int i=1;i<=n;i++){
+            for (int j=1;j<=m;j++){
+            	
+                arr[i][j]=sc.nextInt();
+                
+                if(arr[i][j]>max){
+                    max=arr[i][j];
+                    a=i;
+                    b=j;
+                }
+            }
+        }
+        System.out.print(a+" "+b);
+
+	}
+
+}
