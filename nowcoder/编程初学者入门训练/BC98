@@ -1,0 +1,73 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+/**
+ * @author 15159
+ *题目描述
+有一个整数序列（可能有重复的整数），现删除指定的某一个整数，输出删除指定数字之后的序列，序列中未被删除数字的前后位置没有发生改变。
+输入描述:
+第一行输入一个整数(0≤N≤50)。
+
+第二行输入N个整数，输入用空格分隔的N个整数。
+
+第三行输入想要进行删除的一个整数。
+
+输出描述:
+输出为一行，删除指定数字之后的序列。
+示例1
+输入
+6
+1 2 3 4 5 9
+4
+输出
+1 2 3 5 9
+ */
+public class Bc98 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+//		 Scanner sc = new Scanner(System.in);
+//	        while (sc.hasNext()) {
+//	            int n = sc.nextInt();
+//	            List<String> list = new ArrayList<>();
+//	            for (int i = 0; i < n; i++) {
+//	                int temp = sc.nextInt();
+//	                list.add(Integer.toString(temp));
+//	            }
+//	            String key = Integer.toString(sc.nextInt());
+//	            //使用filter过滤掉key的元素
+//	            list = list.stream()
+//	                    .filter(e->!e.equals(key))
+//	                    .collect(Collectors.toList());
+//	            //每个list元素中间使用空格分割
+//	            String s = list.stream().collect(Collectors.joining(" "));
+//	            System.out.println(s);
+//	        }
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		
+		int delete = sc.nextInt();
+		for(int i=0;i<n;i++) {
+			int temp = arr[i];
+			if(temp!=delete) {
+				System.out.print(temp+" ");
+			}
+		}
+	}
+
+}
