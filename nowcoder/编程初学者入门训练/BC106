@@ -1,0 +1,67 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+KiKi想知道一个n阶方矩是否为上三角矩阵，请帮他编程判定。上三角矩阵即主对角线以下的元素都为0的矩阵，主对角线为从矩阵的左上角至右下角的连线。
+
+输入描述:
+第一行包含一个整数n，表示一个方阵包含n行n列，用空格分隔。 (1≤n≤10)
+
+从2到n+1行，每行输入n个整数（范围-231~231-1），用空格分隔，共输入n*n个数。
+
+输出描述:
+一行，如果输入方阵是上三角矩阵输出"YES"并换行，否则输出"NO"并换行。
+
+示例1
+输入
+3
+1 2 3
+0 4 5
+0 0 6
+输出
+YES
+
+ */
+public class Bc106 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+		while(sc.hasNext()) {
+			int n=sc.nextInt();
+	        int[][] arr=new int[n][n];
+	        int flag=1;
+	        
+	        for (int i=0;i<n;i++) {
+	            for (int j = 0; j < n; j++) {
+	                arr[i][j] = sc.nextInt();
+	            }
+	            sc.nextLine();
+	        }
+	        for (int i=0;i<n;i++){
+	            for (int j=0;j<i;j++){
+	                if(arr[i][j]!=0){
+	                    flag=0;
+	                }
+	            }
+	        }
+	        
+	        if(flag==1){
+	            System.out.println("YES");
+	        }
+	        else {
+	            System.out.println("NO");
+	        }
+		}
+	}
+}
