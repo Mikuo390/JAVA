@@ -1,0 +1,65 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+KiKi有一个矩阵，他想知道转置后的矩阵（将矩阵的行列互换得到的新矩阵称为转置矩阵），请编程帮他解答。
+
+输入描述:
+第一行包含两个整数n和m，表示一个矩阵包含n行m列，用空格分隔。 (1≤n≤10,1≤m≤10)
+
+从2到n+1行，每行输入m个整数（范围-231~231-1），用空格分隔，共输入n*m个数，表示第一个矩阵中的元素。
+
+输出描述:
+输出m行n列，为矩阵转置后的结果。每个数后面有一个空格。
+示例1
+输入
+2 3
+1 2 3
+4 5 6
+输出
+1 4 
+2 5 
+3 6 
+ */
+public class Bc107 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			int row = sc.nextInt();
+			int col = sc.nextInt();
+			int[][] arr = new int[row][col];
+			int[][] arr1 = new int[col][row];
+			
+			for(int i = 0; i < row; i++) {
+	            for (int j = 0; j < col; j++) {
+	            	int scan = sc.nextInt();
+	            	arr[i][j]=scan;
+	            	arr1[j][i]=scan;
+	            }
+	        }
+			
+			for(int i = 0; i < col; i++) {
+	            for (int j = 0; j < row; j++) {
+	            	System.out.print(arr1[i][j]+" ");
+	            if(j==row-1)
+	            	System.out.println("");
+	            }
+	        }
+			
+		}
+
+	}
+
+}
