@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+小乐乐获得4个最大数，请帮他编程找到最大的数。
+输入描述:
+一行，4个整数，用空格分开。
+输出描述:
+一行，一个整数，为输入的4个整数中最大的整数。
+示例1
+输入
+5 8 2 5
+输出
+8
+ */
+public class Bc123 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+        int[] Arr=new int[4];
+        for (int i = 0; i<Arr.length; i++){
+      
+             Arr[i]=sc.nextInt();
+        }
+        int max = Arr[0];
+        for (int i=0;i<4;i++){
+            if(max<Arr[i]){
+                max=Arr[i];
+            }
+        }
+        System.out.println(max);
+
+	}
+
+}
