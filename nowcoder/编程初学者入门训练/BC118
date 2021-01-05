@@ -1,0 +1,73 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+老师给了小乐乐一个正整数序列，要求小乐乐把这个序列去重后按从小到大排序。但是老师给出的序列太长了，小乐乐没办法耐心的去重并排序，请你帮助他。
+
+输入描述:
+第一行包含一个正整数n，表示老师给出的序列有n个数。接下来有n行，每行一个正整数k，为序列中每一个元素的值。(1 ≤ n ≤ 105，1 ≤ k ≤ n)
+
+输出描述:
+输出一行，为去重排序后的序列，每个数后面有一个空格。
+示例1
+输入
+复制
+4
+2
+2
+1
+1
+输出
+1 2 
+示例2
+输入
+5
+5
+4
+3
+2
+1
+输出
+1 2 3 4 5 
+ */
+public class Bc118 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			
+			int n = sc.nextInt();
+			int[] arr = new int[n];
+			
+			for(int i=0;i<n;i++) {
+				arr[i]=sc.nextInt();
+			}
+			
+			LinkedHashSet<Integer> set = new LinkedHashSet<>();
+	        Arrays.sort(arr);
+	        for(int i =0;i<n;i++){
+	            set.add(arr[i]);
+	        }
+	         
+	        for(int a:set){
+	            System.out.print(a+" ");
+	        }
+			
+		}
+
+	}
+
+}
