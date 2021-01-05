@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+小乐乐上课需要走n阶台阶，因为他腿比较长，所以每次可以选择走一阶或者走两阶，那么他一共有多少种走法？
+
+输入描述:
+输入包含一个整数n (1 ≤ n ≤ 30)
+输出描述:
+输出一个整数，即小乐乐可以走的方法数。
+示例1
+输入
+2
+输出
+2
+示例2
+输入
+10
+输出
+89
+ */
+public class Bc117 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		while(sc.hasNext()) {
+			
+			int n = sc.nextInt();
+			
+			System.out.println(climbStairs(n));
+			
+		}
+
+	}
+	
+	public static int climbStairs(int n) {
+		
+		if(n==1)
+			return 1;
+		if(n==2)
+			return 2;
+		return climbStairs(n-1)+climbStairs(n-2);
+		
+	}
+
+}
