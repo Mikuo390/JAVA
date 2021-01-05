@@ -1,0 +1,85 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+小乐乐最近在课上学习了如何求两个正整数的最大公约数与最小公倍数，但是他竟然不会求两个正整数的最大公约数与最小公倍数之和，请你帮助他解决这个问题。
+
+输入描述:
+每组输入包含两个正整数n和m。(1 ≤ n ≤ 109，1 ≤ m ≤ 109)
+
+输出描述:
+对于每组输入，输出一个正整数，为n和m的最大公约数与最小公倍数之和。
+示例1
+输入
+10 20
+输出
+30
+示例2
+输入
+15 20
+输出
+65
+ */
+public class Bc115 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			int n = sc.nextInt();
+			int m = sc.nextInt();
+			int tmp,n1=n,m1=m;
+			//辗转相除法
+			while(n%m!=0) {
+				tmp = n%m;
+	            n = m;
+	            m = tmp;
+			}
+			n = m1/m*n1;
+			
+			System.out.println(n+m);
+			
+		}
+
+	}
+
+}
+
+//import java.awt.font.FontRenderContext;
+//import java.lang.reflect.Array;
+//import java.util.*;
+//import java.io.IOException;
+// 
+//public class Main{
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        long n = sc.nextInt();
+//        long m = sc.nextInt();
+//        long temp, p=n, q=m;
+//        if (n < m){
+//            temp = n;
+//            n = m;
+//            m = temp;
+//        }
+//        long r;
+//        do {
+//            r = n % m;
+//            n = m;
+//            m = r;
+//        }while (r != 0);
+// 
+//        long min = (p * q) / n;
+//        System.out.println(min + n);
+//    }
+//}
+
