@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+2020年来到了，KiKi要对他的n位好朋友说n遍”Happy new year!Good luck!”的祝福语。
+
+输入描述:
+输入只有一行，其中含有一个正整数 n(1≤n≤20)，代表KiKi说祝福话的遍数。
+
+输出描述:
+输出 n行"Happy new year!Good luck!"。
+
+示例1
+输入
+2
+输出
+Happy new year!Good luck!
+Happy new year!Good luck!
+ */
+public class Bc133 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n >= 1 && n <= 20) {
+            for (int i = 1; i <= n; i++) {
+                System.out.println("Happy new year!Good luck!");
+            }
+        } else {
+            System.out.println("输入数据无效");
+        }
+
+	}
+
+}
