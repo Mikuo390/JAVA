@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+
+/**
+ * @author 15159
+ *题目描述
+KiKi知道了什么是质数（只能被1和他自身整除的数），他现在想知道所有三位整数中，有多少个质数。
+输入描述:
+无
+输出描述:
+一行，一个整数，表示所有三位整数中，有多少个质数。
+
+ */
+public class Bc135 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	
+        int num=0;
+        for (int i=100;i<=999;i++){
+            for (int j=2;j<i;j++){
+                if(i%j==0){
+                    num++;
+                    break;
+                }
+            }
+        }
+        System.out.println(900-num);
+
+	}
+
+}
