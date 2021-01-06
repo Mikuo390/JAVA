@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package com.nowcoder.bc;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *题目描述
+小乐乐想计算一下1!+2!+3!+...+n!。
+输入描述:
+一行，一个整数n。
+输出描述:
+一行，一个整数，表示1!+2!+3!+...+n!的结果。
+示例1
+输入
+3
+输出
+9
+ */
+public class Bc128 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        int a = 1;
+        
+        for(int i=1;i<= n;i++){
+            a*=i;
+            sum+=a; 
+        }
+        System.out.println(sum);
+
+	}
+
+}
