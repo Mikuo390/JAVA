@@ -1,0 +1,110 @@
+/**
+ * 
+ */
+package day0125;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+//一个类名是一个名词,说明这个类的用途。结构:修饰词+名词
+//为了对单词的间隔做个好的了解，各种编程都适用了处理技巧，主要分为两类:
+//1. underscore case: prime_finder:C/C++
+//2. camel case: PrimeFinder: java,python,jaxa5scipt
+
+//类名使用驼峰命名法，首字母大写，后续新单词首字母全部大写，以实现单词的识别。
+
+//注释分为:传统注释1)单行注释
+//2)多行注释:/*...*/
+//文档主绎:/**.....*/
+
+//编码总结:
+//1．代码是有规范的,按规范编码,有注释。
+//2．测试驱动的开发（TDD: Test-Driven-Development)
+//3．模块化开发
+
+public class PrimeFinder {
+
+	//带有main方法的类是可执行类，才能被运行
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+//		System.out.println(isPrime(123));
+//		System.out.println(isPrime(231));
+//		System.out.println(isPrime(23));
+		
+		int begin;//开始范围
+		int end;//结束范围
+		int cnt=0;//count,质数计数器
+		int sum=0;//summary 质数求和
+		//sc是一个扫描器，其可以扫描某个区域；System.in代表是标准输入设备，就是键盘
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("开始范围：");
+		begin = sc.nextInt();//从sc中读取二进制数据，数据读到之后，按照整数的方法理解
+		System.out.print("结束范围：");
+		end = sc.nextInt();
+		//System.out.printf("Prime search scope:%d-%d",begin,end);
+		
+		for(int i=begin;i<=end;i++) 
+			if(isPrime(i)) {
+				System.out.print(i+"\t");
+				cnt++;
+				sum+=i;
+				if(cnt%10==0) System.out.println();
+			}
+		
+		System.out.printf("\nprime count:%d,prime summary:%d",cnt,sum);
+				
+	}
+	
+	//方法名一般是动宾结构，比如doSomething，doHomework,checkNum，isPrime，go，work
+	//方法名符合驼峰命名法,但是首字母是小写的。
+	//如果返回值是boolean类型,一般是疑问句形式，比如isXXX( ) .
+	//param：parmeter参数
+	/**
+	 * 质数判断
+	 * @param num 待测试的整数
+	 * @return
+	 * 		true  	是质数
+	 * 		false 	不是质数
+	 */
+	public static boolean isPrime(int num) {
+		
+		//特例处理
+		if(num<=1) return false;
+		if(num==2) return true;
+		
+		//普通处理
+		int i=0;
+		for(i=2;i<=num-1;i++)
+			if(num%i==0) break;
+		return i==num;
+		
+	}
+	
+	/**
+	 * 指数判断（大数据自适应版本）
+	 * @param num
+	 * @return
+	 */
+	public static boolean isAdvPrime(int num) {
+		
+		//特例处理
+		if(num<=1) return false;
+		if(num==2) return true;
+		
+		int top = (int)Math.sqrt(num);	
+		//普通处理
+		int i=0;
+		for(i=2;i<=top;i++)
+			if(num%i==0) break;
+		
+		return i==top+1;
+		
+	}
+}
