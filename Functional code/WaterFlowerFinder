@@ -1,0 +1,77 @@
+/**
+ * 
+ */
+package day0125;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class WaterFlowerFinder {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		//System.out.println(getLength(12311));
+		
+		//System.out.println(isFlowerNum(371));
+		
+		int length;
+		int begin,end;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("请输入数字位数：");
+		length = sc.nextInt();
+		
+		begin = (int)Math.pow(10,length-1);
+		end = (int)Math.pow(10,length)-1;
+		System.out.printf("search scope:%d-%d\n",begin,end);
+		
+		for(int i=begin;i<=end;i++)
+			if(isFlowerNum(i)) System.out.println(i);
+	}
+	
+	/**
+	 * 水仙花数判断（数字位数长度自适应版本）
+	 * @param num
+	 * @return
+	 */
+	public static boolean isFlowerNum(int num) {
+		
+		//获得测试数据的长度
+		int len = getLength(num);
+		int tmp = num;
+		int sum = 0;
+		
+		while(tmp>0) {
+			sum += (int)Math.pow(tmp%10, len);
+			tmp/=10;
+		}
+		
+		return sum==num;
+		
+	}
+	
+	/**
+	 * 计算某个整数的位数
+	 * @param num
+	 * @return
+	 */
+	public static int getLength(int num) {
+		
+		int cnt = 0;
+		
+		while(num>0) {
+			num=num/10;
+			cnt++;
+		}
+		return cnt;
+		//return (num+"").length();//任何一个数加上字符串都会成为字符串
+		
+	}
+
+}
