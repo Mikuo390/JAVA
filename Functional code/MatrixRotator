@@ -1,0 +1,124 @@
+/**
+ * 
+ */
+package day0126;
+
+import java.util.Scanner;
+
+/**
+ * 矩阵选择器
+ * @author 15159
+ *
+ */
+public class MatrixRotator {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+//		int[] arr = new int[3];
+//		int[] arr1 = new int[] {1,2,3};
+//		int[] arr2 = {1,2,3};
+//		int arr3[]= {1,2,3};//不推荐
+//		
+//		System.out.println(arr[0]);
+//		System.out.println(arr1[2]);
+//		
+//		int[][] arr4 = new int[2][3];
+		
+//		int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
+//		printMatrix(matrix);;
+		
+		Scanner sc = new Scanner(System.in);
+		int input = sc.nextInt();
+		
+		int[][] m =creatrMatrix(input);
+		printMatrix(m);
+
+//		int[][] n = cloneMatrix(m);
+//		printMatrix(n);
+		
+		rotateMatrix(m,'R');
+		printMatrix(m);
+		rotateMatrix(m,'L');
+		printMatrix(m);
+	}
+	
+	/**
+	 * 矩阵旋转
+	 * @param matrix 待旋转的矩阵
+	 * @param direction 
+	 * 			L 左转
+	 * 			R 右转
+	 */
+	public static void rotateMatrix(int[][] matrix,char direction) {
+		
+		int[][] temp = cloneMatrix(matrix);
+		int size = matrix.length;
+		
+		for(int i=0;i<size;i++) {
+			for(int j=0;j<size;j++) {
+				if(direction == 'R')
+					matrix[j][size-1-i] = temp[i][j];
+				else if(direction == 'L')
+					matrix[size-1-j][i] = temp[i][j];
+			}
+		}
+		
+	}
+	
+	/**
+	 * 克隆矩阵
+	 * @param srcMatrix 源矩阵
+	 * @return 克隆矩阵
+	 */
+	public static int[][] cloneMatrix(int[][] srcMatrix){
+		
+		int[][] cloneMatrix = new int[srcMatrix.length][srcMatrix.length];
+		
+		for(int i=0;i<srcMatrix.length;i++) {
+			for(int j=0;j<srcMatrix.length;j++)
+				cloneMatrix[i][j] = srcMatrix[i][j];
+		}
+		
+		return cloneMatrix;
+	}
+	
+	/**
+	 * 构建矩阵
+	 * @param size 矩阵规模
+	 * @return
+	 */
+	public static int[][] creatrMatrix(int size){
+		
+		int[][] matrix = new int[size][size];
+		int num = 1;
+		
+		//初始化矩阵
+		for(int i=0;i<size;i++) {
+			for(int j=0;j<size;j++)
+				matrix[i][j]=num++;
+		}
+		
+		return matrix;
+	}
+	
+	/**
+	 * 打印矩阵
+	 * @param matrix 矩阵数组
+	 */
+	public static void printMatrix(int[][] matrix) {
+		
+		int size = matrix[0].length;
+		
+		for(int i=0;i<size;i++) {
+			for(int j=0;j<size;j++)
+				System.out.print(matrix[i][j]+"\t");
+			System.out.println();
+		}
+		System.out.println();
+
+	}
+
+}
