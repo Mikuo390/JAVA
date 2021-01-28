@@ -1,0 +1,61 @@
+/**
+ * 
+ */
+package day0127;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class MonkeyKingFinder {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int monkeyCnt;//猴子的数量
+		int exitedRule;//退出规则
+		int postNum = 0;//报数计数
+		int exitedCnt=0;//保存退出猴子的数量
+		int turn=0;//报数次数
+		
+		System.out.print("请输入猴子的数量：");
+		monkeyCnt = sc.nextInt();
+		System.out.print("请输入退出规则常数：");
+		exitedRule = sc.nextInt();
+		
+		//构建猴子队列，并作出初始化，使所有猴子具备报数权利
+		int[] monkeyList = new int[monkeyCnt];//整形数组成员默认值为0		
+		
+		for(int i=0;i<monkeyCnt;i++) {
+			
+			//如果猴子具备报数权利
+			if(monkeyList[i]==0) {
+				postNum++;//开始报数
+				if(postNum%exitedRule==0) {
+					monkeyList[i]=1;//取消报数权利
+					System.out.println(String.format("编号为%d因为报%d数退出了队列！", i+1,postNum));
+					exitedCnt++;
+					if(exitedCnt==monkeyCnt-1) break;
+				}
+			}
+			
+			if(i==monkeyCnt-1) {
+				i=-1;
+				turn++;
+				System.out.println(String.format("\n===========第%d轮报数结束，截止本轮共退出%d只猴子===========", turn,exitedCnt));
+			}
+			
+		}
+		
+		for(int i=0;i<monkeyCnt;i++)
+			if(monkeyList[i]==0)
+				System.out.println("猴王找到，编号为"+(i+1));
+		
+	}
+
+}
