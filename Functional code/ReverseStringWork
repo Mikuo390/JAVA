@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class ReverseStringWork {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		String str = null;
+		Scanner sc = new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
+		
+		System.out.print("请输入字符串：");
+		str = sc.nextLine();
+		
+		String[] sections = str.split("\\ ");//正则表达式
+		
+		for(int i=0;i<sections.length;i++) {
+			System.out.println(sb.append(sections[i]).reverse());
+			sb.delete(0,sb.length());
+		}	
+		
+		
+	}
+
+}
