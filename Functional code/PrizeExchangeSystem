@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class PrizeExchangeSystem {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int luckylib;
+		int encouragelib;
+		
+		System.out.print("请输入印有“幸运”的瓶盖数：");
+		luckylib = sc.nextInt();
+		System.out.print("请输入印有“鼓励”的瓶盖数：");
+		encouragelib = sc.nextInt();
+		
+		if(isExchanging(luckylib, encouragelib))
+			System.out.println("可以兑换");
+		else
+			System.out.println("不可以兑换");
+			
+			
+
+	}
+	
+	
+	public static boolean isExchanging(int luckylib,int encouragelib) {
+		
+		if(luckylib < 10 && encouragelib < 20)
+			return false;
+		else if(luckylib < 10 || encouragelib < 20)
+			return true;
+		else
+			return false;
+	}
+
+}
