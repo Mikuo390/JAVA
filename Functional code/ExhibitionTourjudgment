@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class ExhibitionTourjudgment {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int date;
+		
+		System.out.print("请输入贝贝邀请晶晶去看展览的日期：");
+		date = sc.nextInt();
+		
+		if(isEttendingExhibition(date))
+			System.out.println("YES");
+		else
+			System.out.println("NO");
+
+	}
+	
+	public static boolean isEttendingExhibition(int date) {
+		
+		if(date==1||date==3||date==5)
+			return false;
+		else if(date==2||date==4||date==6||date==7)
+			return true;
+		else
+			return false;
+		
+	}
+
+}
