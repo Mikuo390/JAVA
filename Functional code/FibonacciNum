@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class FibonacciNum {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int k;
+		
+		System.out.print("请输入序列数：");
+		k = sc.nextInt();
+		
+		System.out.printf("第[%d]个数：%d",k,calcFibonacciNum(k));
+
+	}
+	
+	public static int calcFibonacciNum(int num) {
+		
+		if(num <= 2) 
+			return 1;
+		else
+			return (calcFibonacciNum(num-1)+calcFibonacciNum(num-2));
+				
+				
+	}
+
+}
