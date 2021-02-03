@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class HouseBuyer {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		int salary,rate;
+		double price =200;
+		int year=1;
+		int sum;
+
+		
+		System.out.print("年薪:>");
+		salary = scanner.nextInt();
+		System.out.print("房价增长率:>");
+		rate = scanner.nextInt();
+
+		sum=salary;
+		while(sum<price) {
+			year++;
+			price = price*(1+rate/100.0);
+			sum +=salary;
+			System.out.printf("[%d]年，存款:%d,房价:%f\n",year,sum,price);
+			
+			if(price>sum && year == 8) {
+				System.out.println("不可能买房，好好租房，别想了。");
+				break; 
+			}
+			else if(price<sum) {
+				System.out.println("真不戳！可以购买");
+				break;
+			}
+		}
+		
+	}
+
+}
