@@ -1,0 +1,52 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class PostageCalc {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int weight;
+		int cost = 0;
+		char isUrgent;
+		
+		System.out.print("请输入邮件的重量：");
+		weight = sc.nextInt();
+		System.out.print("是否加急(true/false)：");
+		isUrgent = sc.next().charAt(0);
+		
+		cost = calcPostage(weight, isUrgent);
+		System.out.printf("需要邮费%d元",cost);
+		
+	}
+	
+	public static int calcPostage(int weight,char isUrgent) {
+		
+		int cost = 0;
+		
+		if(weight<=1000 && weight>0)
+			cost = 8;
+		else if(weight>1000 && weight%500==0)
+			cost = 8+((weight-1000)/500)*4;
+		else
+			cost = 8+((weight-1000)/500)*4+4;
+		
+		if(isUrgent == 'y')
+			cost +=5;
+		
+		return cost;
+		
+	}
+
+}
