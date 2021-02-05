@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class OddSum {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int m, n;
+
+		System.out.print("请输入开始范围：");
+		m = sc.nextInt();
+		System.out.print("请输入结束范围：");
+		n = sc.nextInt();
+
+		if (m <= n && n <= 300 && m >= 0 && n >= 0) {
+			System.out.println(addOdd(m, n));
+		} else
+			System.out.println("数据输入错误！请重新输入！");
+
+	}
+
+	public static int addOdd(int begin, int end) {
+
+		int sum = 0;
+
+		for (int i = begin; i <= end; i++) {
+			if (i % 2 != 0)
+				sum += i;
+		}
+
+		return sum;
+	}
+
+}
