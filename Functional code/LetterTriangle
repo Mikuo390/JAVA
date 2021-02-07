@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class LetterTriangle {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);	
+		String letter;
+		
+		System.out.print("请输入字母：");
+		letter = sc.next();
+		
+		printLetterTriangle(letter);
+		
+	}
+	
+	/**
+	 * 打印字母三角形
+	 * @param letter 输入的最大字母
+	 */
+	public static void printLetterTriangle(String letter) {
+		
+		//将小写转换成大写
+		if(letter.charAt(0)>='a' && letter.charAt(0)<='z')
+			letter = letter.toUpperCase();
+			
+		if(letter.charAt(0)>='A' && letter.charAt(0)<='Z') {
+			
+			for(int i=1;i<=((letter.charAt(0)-'A')+1);i++) {//层数
+				
+				//打印空行
+				for(int j=i;j<=(letter.charAt(0)-'A'); j++) {
+					System.out.print(" ");
+				}
+				
+				//打印字母
+	        	char ch = 'A';
+	        	for(int k=0; k<i; k++){//打印前半部分
+	        		System.out.print(ch);
+	        		ch++;
+	        	}
+	        	ch--;//减去中间的一列
+	        	for(int l=1; l<i; l++){
+	        		ch--;
+	        		System.out.print(ch);
+	        	}
+	        	System.out.println();
+				
+			}	
+
+		}
+		else
+			System.out.println("输入错误");
+		
+	}
+
+}
