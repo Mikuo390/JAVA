@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package com.abc.onclass;
+
+/**
+ * @author 15159
+ *
+ */
+public class CarTester {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Car c = new Car();
+		c.run();
+		
+		Car c1 = new Car(30000);
+		c1.run();
+		
+		Car c3 = new Car("玛莎拉蒂");
+		c3.run();
+		
+		Car c2 = new Car("宝马",450000);
+		c2.run();
+		
+	}
+
+}
