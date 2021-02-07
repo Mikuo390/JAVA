@@ -1,0 +1,65 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Random;
+
+/**
+ * @author 15159
+ *
+ */
+public class Student {
+	
+		Random r = new Random();
+		/**姓名*/
+		String name;
+		/**性别*/
+		String sex;
+		/**成绩*/
+		double mark;
+		
+		
+		/**
+		 * 参加考试
+		 */
+		void toExam() {
+			System.out.printf("%s同学,参加了考试\n",name);
+		}
+		/**
+		 * 宣布成绩
+		 */
+		void sayMark() {
+			double score = r.nextInt(1);
+			mark += score;
+			System.out.printf("成绩单：%s同学，性别：%s,成绩：%.2f分\n",name,sex,mark);
+		}
+		
+		/**
+		 * 做出反思
+		 */
+		void doReflection() {
+			if(mark<60 && mark>0)
+				System.out.printf("%s:哎考试开差了，我考了%.2f分,应该去练习了\n",name,mark);
+			else if(mark>=60 && mark<=80)
+				System.out.printf("%s:这次考试马马虎虎吧,我考了%.2f分\n",name,mark);
+			else if(mark>=80 && mark<=100)
+				System.out.printf("%s:这次考试真简单啊,我考了%.2f分\n",name,mark);
+			else
+				System.out.printf("%s同学未参加考试\n",name) ;
+		}
+		
+		/**
+		 * 做练习
+		 */
+		void doExerising() {
+			double score = r.nextInt(30);
+			mark += score;
+			if(mark>100)
+				mark=100;
+			System.out.printf("%s:这张模拟卷我做了%.2f分，下次一定能考好\n",name,mark);
+		}
+		
+		
+
+}
