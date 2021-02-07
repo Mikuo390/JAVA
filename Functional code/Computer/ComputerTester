@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+/**
+ * @author 15159
+ *
+ */
+public class Tester {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Computer c = new Computer();
+		c.boot();
+		
+		Computer c1 = new Computer("微星");
+		c1.boot();
+		
+		Computer c2 = new Computer(30000);
+		c2.boot();
+		
+		Computer c3 = new Computer("AMD 5900X","AMD RX6900","技嘉",15000);
+		c3.boot();
+		
+		Computer.showInfo();
+		
+	}
+
+}
