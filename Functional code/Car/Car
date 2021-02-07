@@ -1,0 +1,52 @@
+/**
+ * 
+ */
+package com.abc.onclass;
+
+/**
+ * @author 15159
+ *
+ */
+public class Car {
+	
+	/**汽车品牌*/
+	String brand;
+	/**汽车价格*/
+	int price;
+	
+	//构造方法的重载
+	//无参构造方法
+	public Car() {//不写构造方法的话系统会自动给你一个
+//		brand = "福特";
+//		price = 120000;
+		this("福特",12000);//层叠构造方法
+	}
+	
+	public Car(String brand) {
+//		this.brand = brand;
+//		this.price = 120000;
+		this(brand,120000);
+	}
+	
+	public Car(int price) {
+//		this.brand = "福特";
+//		this.price = price;
+		this("福特",price);
+	}
+	
+	//全参构造方法
+	public Car(String brand,int price) {
+		this.brand = "["+brand+"]";
+		this.price = price;
+	}
+	
+	void run() {//this 指向当前对象的属性
+		int price = 10;//局部变量
+		System.out.printf("一辆价值为%d的%s的车在行驶\n",this.price,this.brand);
+	}
+	
+	void addOil() {
+		
+	}
+	
+}
