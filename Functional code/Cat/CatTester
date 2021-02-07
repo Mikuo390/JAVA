@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package com.abc.classing;
+
+/**
+ * @author 15159
+ *
+ */
+public class Tester {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Cat cat1 = new Cat();//通过猫类创建一个猫对象，然后使用引用变量c指向这个猫对象
+		
+		cat1.furColor="白";
+		cat1.weight=5.5;
+		
+		cat1.climbTree();
+		cat1.keepFit();
+		cat1.keepFit();
+		cat1.climbTree();
+		cat1.eat();
+		cat1.swim();
+		
+		System.out.println("======================");
+		
+		Cat cat2 = new Cat();//通过猫类创建一个猫对象，然后使用引用变量c指向这个猫对象
+		
+		cat2.furColor="黑";
+		cat2.weight=3.9;
+		
+		cat2.climbTree();
+		cat2.eat();
+		cat2.climbTree();
+		cat2.eat();
+		cat2.keepFit();
+		cat2.keepFit();
+	}
+
+}
