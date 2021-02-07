@@ -1,0 +1,58 @@
+/**
+ * 
+ */
+package com.yjh.homework;
+
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class AppleAcquisition {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int[] apple = new int[10];
+		int chairHigh = 30;
+		int high;
+		
+		for(int i=0;i<10;i++)
+			apple[i] = sc.nextInt();
+		
+		System.out.print("请输入陶陶把手伸直的时候能够达到的最大高度");
+		high = sc.nextInt();
+		
+		System.out.println("能找到的苹果数目有："+calcPickingquantity(apple,chairHigh,high));
+
+	}
+	
+	/**
+	 * 计算能摘到苹果的数量
+	 * @param apple 苹果的高度
+	 * @param chairHigh 椅子高度
+	 * @param high 人的高度
+	 * @return 能摘到苹果的数量
+	 */
+	public static int calcPickingquantity(int[] apple,int chairHigh,int high) {
+		
+		int cnt=0;
+		
+		for(int i=0;i<10;i++) {
+			
+			if(apple[i]<high || apple[i]<high+chairHigh) {
+				cnt++;
+				continue;
+			}
+			
+		}
+		
+		return cnt;
+		
+	}
+
+}
