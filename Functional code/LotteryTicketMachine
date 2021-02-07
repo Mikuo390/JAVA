@@ -1,0 +1,101 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ * @author 15159
+ *
+ */
+public class LotteryTicketMachine {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int sum;//总球数
+		int outNum;//出球数
+		int note;//注数
+		char isSort;
+		
+		System.out.print("总球数:>");
+		sum = sc.nextInt();
+		System.out.print("出球数:>");
+		outNum = sc.nextInt();
+		System.out.print("注数:>");
+		note = sc.nextInt();
+		System.out.print("是否排序(y/n):>");
+		isSort = sc.next().charAt(0);
+		
+		for(int i=1;i<=note;i++) {
+			int[] lotteryNums = getLotteryNums(sum,outNum,isSort);
+			System.out.printf("第[%-2d]注：",i);
+			printLotteryNums(lotteryNums);
+		}
+		
+	}
+	
+	/**
+	 * 检测是否有重复号码
+	 * @param lotteryNums 待加测的彩票
+	 * @param num 对应的数
+	 * @return 
+	 * 			true 重复
+	 * 			false 没重复
+	 */
+	public static boolean isRepeat(int[] lotteryNums,int num) {
+		
+		for(int i=0;i<lotteryNums.length;i++) {
+			if(lotteryNums[i] == num)
+				return true;
+		}	
+		return false;		
+	}
+	
+	/**
+	 * 单注彩票号码生成
+	 * @param sum 总球数
+	 * @param outNum 出球数
+	 * @param isSort 是否排序
+	 * @return 彩票号码
+	 */
+	public static int[] getLotteryNums(int sum,int outNum,char isSort) {
+		
+		Random r = new Random();
+		int[] lotteryNums = new int[outNum];
+		int count = 0;
+		int num;
+		
+		for(int i=count;count<outNum;) {			
+			num = 1+r.nextInt(35);			
+			if(isRepeat(lotteryNums, num) == false) {
+				lotteryNums[count]=num;
+				count++;
+			}	
+		}
+		
+		if(isSort == 'y') {
+			Arrays.sort(lotteryNums);
+		}
+		return lotteryNums;
+		
+	}
+	
+	/**
+	 * 	打印一次彩票的号码
+	 * @param lotterysNum
+	 */
+	public static void printLotteryNums(int[] lotterysNums) {
+		
+		for(int i=0;i<lotterysNums.length;i++)
+			System.out.printf("%-3d",lotterysNums[i]);
+		System.out.println();	
+	}
+
+}
