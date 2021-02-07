@@ -1,0 +1,74 @@
+/**
+ * 
+ */
+package com.abc.classing;
+
+import java.util.Random;
+
+/**
+ * @author 15159
+ *
+ */
+//类的首字母大写
+public class Cat {
+	
+	/** 毛发的颜色*/
+	String furColor;
+	
+	/** 猫的体重*/
+	double weight;
+	
+	Random r = new Random();
+	
+	/**
+	 * 	自我介绍
+	 */
+	void sayHello() {
+		System.out.printf("大家好，我是小%s猫，体重是%.2f公斤。\n"
+				,furColor,weight);
+	}
+	
+	/**
+	 * 	爬树
+	 */
+	void climbTree() {
+		
+		if(weight>5.0)
+			System.out.printf(
+					"小%s猫：哎，身材不行了，体重是%.2f公斤，需要去健身了！\n",furColor,weight);
+		else
+			System.out.printf(
+					"小%s猫：哈，身材不错，爬上树了，体重是%.2f公斤，食堂我来了！\n",furColor,weight);
+	}
+	
+	/**
+	 * 	就餐
+	 */
+	void eat() {
+		double rand = r.nextInt(10)/10.0;
+		weight+=rand;
+		System.out.printf(
+				"小%s猫：哎，才吃一顿饭，体重就是增加%.2f公斤，目前体重是%.2f公斤\n",furColor,rand,weight);
+	}
+	
+	/**
+	 * 健身
+	 */
+	void keepFit() {
+		double rand = r.nextInt(10)/10.0;
+		weight-=rand;
+		System.out.printf(
+				"小%s猫：哎，锻炼好辛苦，体重才减少了%.2f公斤，目前体重是%.2f公斤\n",furColor,rand,weight);
+	}
+	
+	/**
+	 * 	游泳
+	 */
+	void swim() {
+		double rand = r.nextInt(10)/10.0;
+		weight-=rand;
+		System.out.printf(
+				"小%s猫：哎，游泳好辛苦，体重才减少了%.2f公斤，目前体重是%.2f公斤\n",furColor,rand,weight);
+	}
+	
+}
