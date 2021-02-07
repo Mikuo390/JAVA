@@ -1,0 +1,57 @@
+/**
+ * 
+ */
+package com.abc.homework;
+
+/**
+ * @author 15159
+ *
+ */
+public class Computer {
+	
+	/**CPU型号 */
+	String CPU;
+	
+	/**GPU型号 */
+	String GPU;
+	
+	/**主板型号 */
+	String motherboard;
+	
+	/**价钱*/
+	int price;
+	
+	static int count = 0;
+	
+	public Computer() {
+		this("Intel","Nvidia","七彩虹",3000);
+	}
+	
+	public Computer(String motherboard) {
+		this("AMD","AMD",motherboard,3000);
+	}
+		
+	public Computer(int price) {
+		this("Intel i9 11900K","Nvidia RTX 3090","华硕",price);
+	}
+	
+	
+	/**全参*/
+	public Computer(String CPU,String GPU,String motherboard,int price) {
+		this.CPU = "["+CPU+"]";
+		this.GPU = "["+GPU+"]";
+		this.motherboard = "["+motherboard+"]";
+		this.price = price;
+		Computer.count++;
+	}
+	
+	
+	void boot() {
+		System.out.printf("一个CPU是%s,显卡是%s,主板是%s,价格是%s的电脑正在开机!\n"
+				,CPU,GPU,motherboard,price);
+	}
+	
+	static void showInfo() {
+		System.out.println(Computer.count+"台电脑正在开机");
+	}
+}
