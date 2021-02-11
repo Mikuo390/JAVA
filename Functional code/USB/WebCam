@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package com.abc.interfacedemo.experience;
+
+/**
+ * @author 15159
+ *
+ */
+public class WebCam implements USBDevice {
+
+	private String brand;
+	
+	public 	WebCam(String brand) {
+		super();
+		this.brand=brand;
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.abc.interfacedemo.experience.USBDevive#plugin()
+	 */
+	@Override
+	public void plugin() {
+		System.out.println(this+":正在初始化CCD设备---ok！");
+	}
+
+	/* (non-Javadoc)
+	 * @see com.abc.interfacedemo.experience.USBDevive#work()
+	 */
+	@Override
+	public void work() {
+		System.out.println(this+":正在获取影像，信息传送中...");
+	}
+
+	/* (non-Javadoc)
+	 * @see com.abc.interfacedemo.experience.USBDevive#pullout()
+	 */
+	@Override
+	public void pullout() {
+		System.out.println(this+":正在传送最后的数据---设备停止工作");
+	}
+	
+	@Override
+	public String toString() {
+		return this.brand+"摄像头";
+	}
+
+} 
