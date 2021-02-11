@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+package com.abc.interfacedemo.experience;
+
+import java.util.Random;
+
+/**
+ * @author 15159
+ *
+ */
+public class Computer {
+
+	private USBDevice dev1;
+	private USBDevice dev2;
+	
+	public void pluginDev(USBDevice dev) {
+		
+		if(dev1==null) {
+			dev1=dev;
+			System.out.println("USB口1，设备["+dev1+"]插入成功");
+			dev1.plugin();
+			dev1.work();
+		}
+		else if(dev2==null) {
+			dev2=dev;
+			System.out.println("USB口2，设备["+dev2+"]插入成功");
+			dev2.plugin();
+			dev2.work();
+		}
+		else {
+			System.out.println("所有接口都满了，插入USB设备失败！");
+			
+			Random r = new Random();
+			int devID = r.nextBoolean()?1:2; 
+			if(devID==1) {
+				System.out.println("USB口1上的设备["+dev1+"]被选中，要被移除了！！！");
+				dev1.pullout();
+				dev1=dev;
+				dev1.plugin();
+				dev1.work();
+			}
+			else {
+				System.out.println("USB口1上的设备["+dev2+"]被选中，要被移除了！！！");
+				dev2.pullout();
+				dev2=dev;
+				dev2.plugin();
+				dev2.work();
+			}
+
+		}
+	}
+	
+	public void shutdown() {
+		 
+		if(this.dev1!=null) {
+			this.dev1.pullout();
+			this.dev1=null;
+		}
+		
+		if(this.dev2!=null) {
+			this.dev2.pullout();
+			this.dev2=null;
+		}
+		
+		System.out.println("computer shutdown is ok!");
+		
+	}
+}
