@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+package com.abc.interfacedemo.experience;
+
+/**
+ * @author 15159
+ *
+ */
+public class PortableHD implements USBDevice {
+
+	private String brand;
+	private String capacity;	
+	
+	public PortableHD(String brand, String capacity) {
+		super();
+		this.brand = brand;
+		this.capacity = capacity;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.abc.interfacedemo.experience.USBDevive#plugin()
+	 */
+	@Override
+	public void plugin() {
+		System.out.println(this+":正在进行磁道搜素工作CCD设备---ok！");
+	}
+
+	/* (non-Javadoc)
+	 * @see com.abc.interfacedemo.experience.USBDevive#work()
+	 */
+	@Override
+	public void work() {
+		System.out.println(this+":正在进行数据读写传输---");
+	}
+
+	/* (non-Javadoc)
+	 * @see com.abc.interfacedemo.experience.USBDevive#pullout()
+	 */
+	@Override
+	public void pullout() {
+		System.out.println(this+":正在进行传送，磁头归位---ok！");
+	} 
+
+	@Override
+	public String toString() {
+		return this.brand+this.capacity+"移动硬盘";
+	}
+	
+}
