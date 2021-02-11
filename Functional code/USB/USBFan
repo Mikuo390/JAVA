@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package com.abc.interfacedemo.experience;
+
+/**
+ * @author 15159
+ *
+ */
+public class USBFan implements USBDevice {
+
+	/* (non-Javadoc)
+	 * @see com.abc.interfacedemo.experience.USBDevice#plugin()
+	 */
+	@Override
+	public void plugin() {
+		System.out.println(this+":正在缓慢启动中...");
+	}
+
+	/* (non-Javadoc)
+	 * @see com.abc.interfacedemo.experience.USBDevice#work()
+	 */
+	@Override
+	public void work() {
+		System.out.println(this+":正在送风中...");
+	}
+
+	/* (non-Javadoc)
+	 * @see com.abc.interfacedemo.experience.USBDevice#pullout()
+	 */
+	@Override
+	public void pullout() {
+		System.out.println(this+":嘎吱嘎吱逐步停下了...");
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "地摊杂牌电风扇";
+	}
+
+}
