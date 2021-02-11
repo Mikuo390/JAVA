@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package com.abc.interfacedemo.experience;
+
+/**
+ * @author 15159
+ *
+ */
+public interface USBDevice {
+
+	void plugin();
+	void work();
+	void pullout();
+	
+}
