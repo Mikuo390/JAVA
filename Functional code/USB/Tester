@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package com.abc.interfacedemo.experience;
+
+/**
+ * @author 15159
+ *
+ */
+public class Tester {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Computer computer = new Computer();
+		
+		computer.pluginDev(new WebCam("罗技牌"));
+		System.out.println("--------------------------------------------");
+		computer.pluginDev(new PortableHD("西部数据","4TB"));
+		System.out.println("--------------------------------------------");
+		computer.pluginDev(new USBFan()); 
+		System.out.println("--------------------------------------------");
+		computer.shutdown();
+	}
+
+}
