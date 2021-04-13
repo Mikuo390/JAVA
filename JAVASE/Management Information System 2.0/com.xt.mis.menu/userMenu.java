@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 public class userMenu extends JFrame implements ActionListener{
 
 	//头像
-	URL url = userMenu.class.getResource("1.gif");
+	URL url = userMenu.class.getResource("1.gif");//头像路径记得改
 	JLabel label = new JLabel();
 	ImageIcon ii = new ImageIcon(url); 
 	
